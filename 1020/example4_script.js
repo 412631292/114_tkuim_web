@@ -29,4 +29,29 @@ switch (choice) {
     msg += '\n非 1/2/3';
 }
 
+// ===== 延伸練習：輸入分數（0–100），輸出等第 =====
+var scoreInput = prompt('請輸入一個分數（0–100）：');
+var score = parseInt(scoreInput, 10);
+
+if (isNaN(score) || score < 0 || score > 100) {
+  msg += '\n輸入的分數無效！';
+} else {
+  var grade = '';
+
+  if (score >= 90) {
+    grade = 'A';
+  } else if (score >= 80) {
+    grade = 'B';
+  } else if (score >= 70) {
+    grade = 'C';
+  } else if (score >= 60) {
+    grade = 'D';
+  } else {
+    grade = 'F';
+  }
+
+  msg += '\n分數：' + score + ' → 等第：' + grade;
+}
+
+// 顯示結果
 document.getElementById('result').textContent = msg;
