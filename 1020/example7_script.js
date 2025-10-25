@@ -26,6 +26,12 @@ function bmiLevel(bmi) {
   return level;
 }
 
+// ⭐ 延伸練習：判斷是否為理想範圍
+function isIdeal(bmi) {
+  // 回傳 true / false
+  return bmi >= 18.5 && bmi < 24;
+}
+
 var hStr = prompt('請輸入身高（公分）：');
 var wStr = prompt('請輸入體重（公斤）：');
 var hNum = parseFloat(hStr);
@@ -39,7 +45,8 @@ if (isNaN(hNum) || isNaN(wNum) || hNum <= 0) {
   text = '身高：' + hNum + ' cm\n'
        + '體重：' + wNum + ' kg\n'
        + 'BMI：' + bmi.toFixed(2) + '\n'
-       + '等級：' + bmiLevel(bmi);
+       + '等級：' + bmiLevel(bmi) + '\n'
+       + '是否理想範圍：' + isIdeal(bmi);
 }
 
 document.getElementById('result').textContent = text;
